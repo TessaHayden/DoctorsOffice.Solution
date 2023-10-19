@@ -1,0 +1,24 @@
+body {
+  margin: 5%;
+  text-align: center;
+}
+ul {
+  list-style-position: inside;
+  text-align: center;
+}
+div#footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  color: #CCC;
+  background: #333;
+  padding: 8px;
+}
+input {
+  background-color:rgb(21, 21, 194);
+  font-size: 12px;
+  color: white;
+  border: none;
+  border-radius: 15%;
+}

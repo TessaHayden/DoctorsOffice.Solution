@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "2BRzZXlCbq9dmYMQzxmQ+oexAFqI0srQPJP6UTri5NI=",
+  "Source": "DoctorOffice",
+  "BasePath": "_content/DoctorOffice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DoctorOffice/wwwroot",
+      "Source": "DoctorOffice",
+      "ContentRoot": "/Users/tessahayden/Desktop/Epicodus/DoctorsOffice.Solution/DoctorsOffice/wwwroot/",
+      "BasePath": "_content/DoctorOffice",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/tessahayden/Desktop/Epicodus/DoctorsOffice.Solution/DoctorsOffice/wwwroot/css/styles.css",
+      "SourceId": "DoctorOffice",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/tessahayden/Desktop/Epicodus/DoctorsOffice.Solution/DoctorsOffice/wwwroot/",
+      "BasePath": "_content/DoctorOffice",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/styles.css"
+    }
+  ]
+}

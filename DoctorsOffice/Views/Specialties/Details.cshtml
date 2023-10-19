@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@using DoctorsOffice.Models
+@model DoctorsOffice.Models.Specialty
+
+<h2>Specialty doctors</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.SpecialtyName): @Html.DisplayFor(model => model.SpecialtyName)</h3>
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>This specialty does not belong to any doctors.</p>
+}
+else
+{
+  <h4>Specialty doctors:</h4>
+  <ul>
+  @foreach (DoctorSpecialty join in Model.JoinEntities)
+    {
+      <li>@join.Doctor.DoctorName</li>
+      @using (Html.BeginForm("DeleteJoin", "Specialties"))
+      {
+        @Html.Hidden("joinId", @join.DoctorSpecialtyId)
+        <input type="submit" value="Delete" />
+      }
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Add a doctor", "AddDoctor", new { id = Model.SpecialtyId })</p>
+<p>@Html.ActionLink("Delete specialty", "Delete", new { id = Model.SpecialtyId })</p>

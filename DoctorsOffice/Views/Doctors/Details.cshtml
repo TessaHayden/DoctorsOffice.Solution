@@ -1,0 +1,42 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DoctorsOffice.Models.Doctor
+@using DoctorsOffice.Models
+
+<h2>Doctor Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.DoctorName): @Html.DisplayFor(model => model.DoctorName)<h3>
+
+    @if (@Model.Patients.Count == 0)
+    {
+      <h3>No patients have been added to this doctor yet!</h3>
+      <p>@Html.ActionLink("Add a patient", "Create", "Patients")</p>
+    }
+    else
+    {
+      <h3>Patients:</h3>
+      <ul>
+        @foreach (Patient pat in Model.Patients)
+        {
+          <li>@pat.PatientName</li>
+        }
+      </ul>
+      <h3>Specialties:</h3>
+      <ul>
+        @foreach (DoctorSpecialty join in Model.JoinEntities)
+        {
+          <li>Specialty: @join.Specialty.SpecialtyName</li>
+          @using (Html.BeginForm("DeleteJoin", "Doctors"))
+          {
+            @Html.Hidden("joinId", @join.DoctorSpecialtyId)
+            <input type="submit" value="Delete" />
+          }
+        }
+      </ul>
+      
+    }<p>@Html.ActionLink("Add a specialty", "AddSpecialty", new { id = Model.DoctorId })</p>
+    <p>@Html.ActionLink("Create doctor profile", "Create")</p>
+    <p>@Html.ActionLink("Back to doctors", "Index")</p>
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>

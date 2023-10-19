@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DoctorsOffice.Models.Patient
+
+<p><strong>NOTE:</strong> You need to have at least one doctor before you can add a patient!</p>
+<p>Go to @Html.ActionLink("this page", "Create", "Doctors") to create a doctor profile.</p>
+
+<h4>Add a new patient</h4>
+<p>@Html.ValidationMessageFor(model => model.DoctorId, "", new {@class = "text-danger", @style = "font-weight: 600;"})</p>
+<p>@Html.ValidationMessageFor(model => model.PatientName, "", new {@class = "text-danger", @style = "font-weight: 600;"})</p>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.PatientName)
+  @Html.TextBoxFor(model => model.PatientName)
+
+  @Html.LabelFor(model => model.Doctors)
+  @Html.DropDownList("DoctorId")
+
+  <input type="submit" value="Add new patient" class="btn btn-primary" />
+}
+<p>@Html.ActionLink("Show all patients", "Index")</p>
